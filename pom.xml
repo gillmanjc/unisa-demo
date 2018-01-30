@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>zaac.unisa</groupId>
+	<artifactId>unisa-demo</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Unisa demo tool</name>
+	<description>Archetype to generate a project with sakai and spring</description>
+
+	<parent>
+		<groupId>org.sakaiproject</groupId>
+		<artifactId>master</artifactId>
+		<version>11.4</version>
+		<relativePath>../master</relativePath>
+	</parent>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- project dependencies -->
+			<dependency>
+				<groupId>zaac.unisa</groupId>
+				<artifactId>unisa-demo-api</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>zaac.unisa</groupId>
+				<artifactId>unisa-demo-impl</artifactId>
+				<version>1.0-SNAPSHOT</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.16.14</version>
+				<!-- <type>jar</type> -->
+				<!-- <scope>provided</scope> -->
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<sakai.kernel.version>11.4</sakai.kernel.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.2.7.RELEASE</spring.version>
+		<spring.security.version>4.2.3.RELEASE</spring.security.version>
+		<module.version>1.0-SNAPSHOT</module.version>
+	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>Sakai Plugin Repo</id>
+			<url>http://source.sakaiproject.org/maven2</url>
+			<releases>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>oc-nexus-releases</id>
+			<name>OpenCollab Nexus Release Repo</name>
+			<url>http://nexus.opencollab.co.za/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>oc-nexus-snapshot</id>
+			<name>OpenCollab Nexus Snapshot Repo</name>
+			<url>http://nexus.opencollab.co.za/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<name>OpenCollab Nexus Release Repo</name>
+			<id>oc-nexus-releases</id>
+			<url>http://nexus.opencollab.co.za/nexus/content/repositories/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<name>OpenCollab Nexus Snapshot Repo</name>
+			<id>oc-nexus-snapshot</id>
+			<url>http://nexus.opencollab.co.za/nexus/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+  <modules>
+    <module>api</module>
+    <module>impl</module>
+    <module>tool</module>
+    <module>pack</module>
+  </modules>
+</project>

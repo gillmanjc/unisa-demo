@@ -6,7 +6,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Unisa demo tool</name>
-	<description>Archetype to generate a project with sakai and spring</description>
+	<description>Archetype to generate a project with sakai and spring - This is a Unisa Demo!!</description>
 
 	<parent>
 		<groupId>org.sakaiproject</groupId>
